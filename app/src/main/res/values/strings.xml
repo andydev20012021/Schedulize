@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">Schedulize</string>
+
+    <string name="add_fragment">Add</string>
+    <string name="edit_fragment" >Edit</string>
+    <string name="setting_fragment">Setting</string>
+
+
+    //Subject
+    <string name="subject_name">Subject name</string>
+    <string name="subject_day_of_week">Day of week</string>
+    <string name="subject_start_time">Start</string>
+    <string name="subject_end_time">End</string>
+    <string name="subject_teacher">Teacher</string>
+    <string name="subject_place">Place</string>
+
+    //Day of week
+    <string-array name="day_of_week">
+        <item name="monday">Monday</item>
+        <item name="tuesday">Tuesday</item>
+        <item name="wednesday">Wednesday</item>
+        <item name="thursday">Thursday</item>
+        <item name="friday">Friday</item>
+        <item name="saturday">Saturday</item>
+        <item name="sunday">Sunday</item>
+    </string-array>
+
+    //dialog text
+    <string name="dialog_delete">Do you really want to delete?</string>
+    <string name="dialog_pick_time">Select Appointment time</string>
+
+    //Text in mainActivity Ayni vaqtda dars jadvali bo’sh. Jadvalga dars kiritish uchun yuqoridagi “+” tugmasini bosing
+    <string name="schedulize_is_empty">The schedule is currently empty.
+To add a lesson to the table
+click the "+" button above</string>
+
+    //Helper text
+    <string name="may_be_empty">May be empty</string>
+
+    //Error text
+    <string name="error_empty">Field can\'t be empty</string>
+
+    //Menu
+    <string name="add_subject">Add</string>
+    <string name="setting">Setting</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+
+    <!-- Preference Titles -->
+    <string name="general">General</string>
+    <string name="data">Data</string>
+    <string name="about_app">About app</string>
+
+    <!-- general Preferences -->
+    <string name="notification_title">Notification</string>
+    <string name="language_title">Language</string>
+    <string name="theme_title">Theme</string>
+    <string name="notification_summary">Notification settings</string>
+
+    <!-- Data Preferences -->
+    <string name="export_title">Export</string>
+    <string name="import_title">Import</string>
+    <string name="export_summary">Export course schedule</string>
+    <string name="imoort_summary">Import course schedule</string>
+
+    <!-- About app Preferences -->
+    <string name="version_title">Version</string>
+    <string name="meneger_title">Project Manager and Designer</string>
+    <string name="programmer_title">Programmer</string>
+    <string name="telegram_title">Telegram</string>
+    <string name="telegram_summary">Telegram chat of the project</string>
+
+    <string-array name="languages_entries">
+        <item>en</item>
+        <item>ru</item>
+        <item>uz</item>
+    </string-array>
+    <string-array name="languages_values">
+        <item>en</item>
+        <item>ru</item>
+        <item>uz</item>
+    </string-array>
+
+    <string-array name="theme_entries">
+        <item>System theme</item>
+        <item>Day</item>
+        <item>Night</item>
+    </string-array>
+    <string-array name="theme_values">
+        <item>-1</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+
+</resources>

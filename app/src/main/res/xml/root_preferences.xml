@@ -1,0 +1,80 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/general">
+
+        <Preference
+            app:key="notification"
+            app:title="@string/notification_title"
+            app:summary="@string/notification_summary"
+            app:icon="@drawable/ic_baseline_notifications_24"/>
+
+        <ListPreference
+            app:key="language"
+            app:defaultValue="en"
+            app:entries="@array/languages_entries"
+            app:entryValues="@array/languages_values"
+            app:title="@string/language_title"
+            app:icon="@drawable/ic_baseline_language_24"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            app:key="theme"
+            app:defaultValue="-1"
+            app:entries="@array/theme_entries"
+            app:entryValues="@array/theme_values"
+            app:title="@string/theme_title"
+            app:icon="@drawable/ic_baseline_bedtime_24"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/data">
+
+        <Preference
+            app:key="export"
+            app:title="@string/export_title"
+            app:summary="@string/export_summary"
+            app:icon="@drawable/ic_baseline_export_24"/>
+
+        <Preference
+            app:key="notification"
+            app:title="@string/import_title"
+            app:summary="@string/imoort_summary"
+            app:icon="@drawable/ic_baseline_import_24"/>
+
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/about_app">
+
+        <Preference
+            app:key="app_version"
+            app:title="Version"
+            app:summary="1.0.0"
+            app:icon="@drawable/ic_baseline_info_24"/>
+
+        <Preference
+            app:title="@string/meneger_title"
+            app:icon="@drawable/ic_baseline_manager_24"
+            app:summary="Azizjon Akramov"/>
+        <Preference
+            app:title="@string/programmer_title"
+            app:icon="@drawable/ic_baseline_code_24"
+            app:summary="Matjon"/>
+
+        <Preference
+            app:title="@string/telegram_title"
+            app:summary="@string/telegram_summary"
+            app:icon="@drawable/ic_baseline_telegram_24"
+            app:key="telegram_chat">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Matjon"/>
+        </Preference>
+
+
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

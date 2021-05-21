@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginHorizontal="@dimen/basic_margin_horizontal"
+    android:layout_marginVertical="8dp"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:id="@+id/root"
+    android:background="@drawable/cart_item_background">
+
+    <TextView
+        android:id="@+id/subject_name"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/on_surface_100"
+        android:textSize="@dimen/subtitle_1"
+        tools:text="math"/>
+
+    <TextView
+        android:id="@+id/subject_period"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_text"
+        android:layout_width="match_parent"
+        android:textColor="@color/on_surface_100"
+        android:textSize="@dimen/subtitle_1"
+        tools:text="13:00-14:00"/>
+
+    <TextView
+        android:alpha="0.6"
+        android:id="@+id/subject_teacher"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_text"
+        android:layout_width="match_parent"
+        android:textColor="@color/on_surface_100"
+        android:textSize="@dimen/subtitle_2"
+        tools:text="Xidorova"/>
+
+    <TextView
+        android:alpha="0.6"
+        android:id="@+id/subject_place"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_text"
+        android:layout_width="match_parent"
+        android:textColor="@color/on_surface_100"
+        android:textSize="@dimen/subtitle_2"
+        tools:text="D301"/>
+
+</LinearLayout>

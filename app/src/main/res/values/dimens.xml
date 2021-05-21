@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="heading_1">34sp</dimen>
+    <dimen name="heading_2">24sp</dimen>
+    <dimen name="heading_3">20sp</dimen>
+    <dimen name="subtitle_1">16sp</dimen>
+    <dimen name="subtitle_2">14sp</dimen>
+    <dimen name="subtitle_3">12sp</dimen>
+
+    <dimen name="margin_text">4dp</dimen>
+    <dimen name="basic_margin_horizontal">16dp</dimen>
+    <dimen name="color_view_size">32dp</dimen>
+    <dimen name="margin_between_views">8dp</dimen>
+</resources>
