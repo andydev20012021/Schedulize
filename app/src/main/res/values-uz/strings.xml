@@ -62,11 +62,11 @@
     <string name="export_title" >Eksport</string>
     <string name="import_title" >Import</string>
     <string name="export_summary" >Dars jadvalini eksportlash</string>
-    <string name="imoort_summary" >Dars jadvalini importlash</string>
+    <string name="import_summary" >Dars jadvalini importlash</string>
 
     <!-- About app Preferences -->
     <string name="version_title" >Ilova versiyasi</string>
-    <string name="meneger_title" >Loyiha menejeri va dizayner</string>
+    <string name="manager_title" >Loyiha menejeri va dizayner</string>
     <string name="programmer_title" >Dasturchi</string>
     <string name="telegram_title" >Telegram</string>
     <string name="telegram_summary" >Loyihaning Telegram chati</string>

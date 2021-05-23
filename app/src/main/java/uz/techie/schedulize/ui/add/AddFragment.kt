@@ -103,6 +103,7 @@ class AddFragment : Fragment() {
             if (viewModel.isEditingLiveData.value!!)
                 setTitle(R.string.edit_fragment)
             else setTitle(R.string.add_fragment)
+            setBackgroundResource(R.color.primary)
             setNavigationIcon(R.drawable.ic_baseline_close_24)
             setNavigationOnClickListener {
                 findNavController().popBackStack()

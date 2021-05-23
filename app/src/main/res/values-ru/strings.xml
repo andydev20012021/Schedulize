@@ -63,11 +63,11 @@ click the "+" button above</string>
     <string name="export_title">Export</string>
     <string name="import_title">Import</string>
     <string name="export_summary">Export course schedule</string>
-    <string name="imoort_summary">Import course schedule</string>
+    <string name="import_summary">Import course schedule</string>
 
     <!-- About app Preferences -->
     <string name="version_title">Version</string>
-    <string name="meneger_title">Project Manager and Designer</string>
+    <string name="manager_title">Project Manager and Designer</string>
     <string name="programmer_title">Programmer</string>
     <string name="telegram_title">Telegram</string>
     <string name="telegram_summary">Telegram chat of the project</string>

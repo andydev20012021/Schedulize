@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="?attr/colorPrimary"
+        android:background="@color/primary"
         app:titleTextColor="@color/on_surface_100"/>
 
     <androidx.fragment.app.FragmentContainerView

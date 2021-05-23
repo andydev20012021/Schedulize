@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.Schedulize" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimary">@color/on_surface_100</item>
         <item name="colorPrimaryVariant">@color/primary</item>
-        <item name="colorOnPrimary">@color/on_surface_100</item>
+        <item name="colorOnPrimary">@color/primary</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/on_surface_100</item>
         <item name="colorSecondaryVariant">@color/on_surface_200</item>

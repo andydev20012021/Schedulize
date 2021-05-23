@@ -35,6 +35,7 @@ class MainFragment : Fragment() {
         val toolbar = activity?.findViewById<Toolbar>(R.id.toolbar)
         toolbar?.apply {
             setTitle(R.string.app_name)
+            setBackgroundResource(R.color.primary)
             navigationIcon = null
         }
     }
@@ -98,7 +99,7 @@ class MainFragment : Fragment() {
                 true
             }
             R.id.setting -> {
-                findNavController().navigate(R.id.action_fragmentMain_to_settingsFragment)
+                findNavController().navigate(R.id.action_fragmentMain_to_settingFragment)
                 true
             }
             else -> false

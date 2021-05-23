@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_fragmentMain_to_cardViewFragment"
             app:destination="@id/cardViewFragment" />
+        <action
+            android:id="@+id/action_fragmentMain_to_settingFragment"
+            app:destination="@id/settingFragment" />
 
     </fragment>
     <fragment
@@ -47,7 +50,11 @@
         android:name="uz.techie.schedulize.ui.list.CardListFragment"
         android:label="card_list_fragment"
         tools:layout="@layout/card_list_fragment" />
-
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="uz.techie.schedulize.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
 
 
 </navigation>

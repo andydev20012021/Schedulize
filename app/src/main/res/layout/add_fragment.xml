@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary">
+    android:background="@color/primary"
+    android:paddingBottom="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -152,6 +153,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="24dp"
+            android:scrollbarSize="0dp"
             android:layout_marginHorizontal="@dimen/basic_margin_horizontal">
 
             <LinearLayout

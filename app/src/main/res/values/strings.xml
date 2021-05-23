@@ -2,7 +2,7 @@
     <string name="app_name">Schedulize</string>
 
     <string name="add_fragment">Add</string>
-    <string name="edit_fragment" >Edit</string>
+    <string name="edit_fragment">Edit</string>
     <string name="setting_fragment">Setting</string>
 
 
@@ -29,7 +29,8 @@
     <string name="dialog_delete">Do you really want to delete?</string>
     <string name="dialog_pick_time">Select Appointment time</string>
 
-    //Text in mainActivity Ayni vaqtda dars jadvali bo’sh. Jadvalga dars kiritish uchun yuqoridagi “+” tugmasini bosing
+    //Text in mainActivity Ayni vaqtda dars jadvali bo’sh. Jadvalga dars kiritish uchun yuqoridagi
+    “+” tugmasini bosing
     <string name="schedulize_is_empty">The schedule is currently empty.
 To add a lesson to the table
 click the "+" button above</string>
@@ -62,11 +63,11 @@ click the "+" button above</string>
     <string name="export_title">Export</string>
     <string name="import_title">Import</string>
     <string name="export_summary">Export course schedule</string>
-    <string name="imoort_summary">Import course schedule</string>
+    <string name="import_summary">Import course schedule</string>
 
     <!-- About app Preferences -->
     <string name="version_title">Version</string>
-    <string name="meneger_title">Project Manager and Designer</string>
+    <string name="manager_title">Project Manager and Designer</string>
     <string name="programmer_title">Programmer</string>
     <string name="telegram_title">Telegram</string>
     <string name="telegram_summary">Telegram chat of the project</string>
@@ -92,6 +93,7 @@ click the "+" button above</string>
         <item>1</item>
         <item>2</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
 
 
 </resources>
