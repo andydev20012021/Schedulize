@@ -1,15 +1,11 @@
 package uz.techie.schedulize.ui.add
 
-import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
-import android.os.HandlerThread
 import android.text.format.DateFormat
 import android.view.*
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -35,12 +31,10 @@ class AddFragment : Fragment() {
     private var _binding: AddFragmentBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var toolbar: Toolbar
     private lateinit var dropDownAdaper: ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
 
     }
 
@@ -49,6 +43,25 @@ class AddFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = AddFragmentBinding.inflate(inflater, container, false)
+
+        binding.toolbar.apply {
+            setBackgroundResource(R.color.primary)
+            setNavigationIcon(R.drawable.ic_baseline_close_24)
+            setNavigationOnClickListener {
+                findNavController().popBackStack()
+            }
+            inflateMenu(R.menu.menu_add_fragment)
+            setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.save -> {
+                        if (saveSubject())
+                            findNavController().popBackStack()
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }
 
         viewModel.dayOfWeek = resources.getStringArray(R.array.day_of_week)
         dropDownAdaper =
@@ -83,9 +96,7 @@ class AddFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-
         binding.subjectDay.setAdapter(dropDownAdaper)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -98,35 +109,13 @@ class AddFragment : Fragment() {
             viewModel.isEditingLiveData.value = true
             viewModel.getSubjectByIdIfEditing(subjectId)
         }
-        toolbar = requireActivity().findViewById(R.id.toolbar)
-        toolbar?.apply {
+        binding.toolbar?.apply {
             if (viewModel.isEditingLiveData.value!!)
                 setTitle(R.string.edit_fragment)
             else setTitle(R.string.add_fragment)
-            setBackgroundResource(R.color.primary)
-            setNavigationIcon(R.drawable.ic_baseline_close_24)
-            setNavigationOnClickListener {
-                findNavController().popBackStack()
-            }
+
         }
     }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_add_fragment, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.save -> {
-                if (saveSubject())
-                    findNavController().popBackStack()
-                true
-            }
-            else -> false
-        }
-    }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -192,7 +181,7 @@ class AddFragment : Fragment() {
             .setHour(12)
             .setMinute(0)
             .build()
-        picker.addOnDismissListener() {
+        picker.addOnPositiveButtonClickListener() {
             val hour = "${picker.hour}"
             val minutes = if (picker.minute == 0) "00" else "${picker.minute}"
             when (extra_dialog) {

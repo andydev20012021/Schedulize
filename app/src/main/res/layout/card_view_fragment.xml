@@ -4,10 +4,18 @@
     android:id="@+id/layout_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:transitionName="root">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/primary"/>
 
     <TextView
         android:id="@+id/subject_name"
+        android:transitionName="subject_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/basic_margin_horizontal"
@@ -57,6 +65,7 @@
 
         <TextView
             android:id="@+id/subject_period"
+            android:transitionName="subject_period"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/basic_margin_horizontal"
@@ -84,6 +93,7 @@
 
         <TextView
             android:id="@+id/subject_teacher"
+            android:transitionName="subject_teacher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/basic_margin_horizontal"
@@ -110,6 +120,7 @@
 
         <TextView
             android:id="@+id/subject_place"
+            android:transitionName="subject_place"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/basic_margin_horizontal"

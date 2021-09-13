@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     android:background="@color/primary">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/primary"
+        app:titleTextColor="@color/on_surface_100"/>
+
     <TextView
         android:id="@+id/text_when_empty"
         android:layout_width="0dp"
@@ -20,30 +28,32 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primary"
-        app:tabTextColor="@color/on_surface_200"
-        app:tabSelectedTextColor="@color/on_surface_100"
-        app:tabIndicatorColor="@color/on_surface_100"
-        app:tabIndicatorHeight="2dp"
-        app:tabIndicator="@drawable/tab_indicator_background"
-        app:tabTextAppearance="@style/CustomTextAppearanceTab"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tabMode="scrollable"/>
-
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
     <View
         android:id="@+id/separator"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         app:layout_constraintBottom_toBottomOf="@id/tabLayout"
         android:background="@color/on_surface_400"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        app:tabTextColor="@color/on_surface_200"
+        app:tabSelectedTextColor="@color/on_surface_100"
+        app:tabIndicatorColor="@color/on_surface_100"
+        app:tabIndicatorHeight="2dp"
+        android:layout_marginHorizontal="@dimen/basic_margin_horizontal"
+        app:tabIndicator="@drawable/tab_indicator_background"
+        app:tabTextAppearance="@style/CustomTextAppearanceTab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:tabMode="scrollable"/>
+
+
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"

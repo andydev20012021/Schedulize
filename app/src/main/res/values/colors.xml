@@ -8,6 +8,8 @@
     <color name="on_surface_300">#ABABAB</color>
     <color name="on_surface_400">#E0E0E0</color>
 
+    <color name="widget_background_color">#66FFFFFF</color>
+
     <color name="card_color_default">#FFFFFF</color>
     <color name="card_color_red">#F28B82</color>
     <color name="card_color_orange">#FBBC04</color>
@@ -20,5 +22,9 @@
     <color name="card_color_pink">#FDCFE8</color>
     <color name="card_color_brown">#E6C9A8</color>
     <color name="card_color_grey">#E8EAED</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
 
 </resources>

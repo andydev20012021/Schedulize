@@ -17,10 +17,11 @@ class RoomModule {
 
     @Provides
     @Singleton
-    fun provideDataBase(@ApplicationContext context: Context) =
-        Room.databaseBuilder(
+    fun provideDataBase(@ApplicationContext context: Context):SubjectsListDataBase{
+        return Room.databaseBuilder(
             context,
             SubjectsListDataBase::class.java,
             "time_table"
         ).build()
+    }
 }

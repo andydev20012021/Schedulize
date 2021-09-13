@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,7 +30,6 @@ class CardListFragment : Fragment() {
             fragment.arguments = Bundle().apply {
                 putInt(ARG_DAY, day)
             }
-            Log.d(TAG, "put argument day = $day")
             return fragment
         }
     }
@@ -46,28 +47,37 @@ class CardListFragment : Fragment() {
         if (view is RecyclerView) {
             with(view) {
                 layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
                 adapter = listAdapter
-                viewModel.subjectsOfDayLiveData.observe(viewLifecycleOwner, Observer { subjects ->
-                    listAdapter.setSubjects(subjects)
-                })
-                listAdapter.setOnItemClickListener { position ->
-                    val id = viewModel.subjectsOfDayLiveData.value?.get(position)?.id ?: -1
-                    val action = MainFragmentDirections.actionFragmentMainToCardViewFragment(id)
-                    findNavController().navigate(action)
-                }
             }
         }
+
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        postponeEnterTransition()
+
         arguments?.takeIf { it.containsKey(ARG_DAY) }?.apply {
             val day = getInt(ARG_DAY, -1)
             if (day != -1) viewModel.loadData(day)
-            Log.d(TAG,"get argument day = $day")
+
+        }
+
+        viewModel.subjectsOfDayLiveData.observe(viewLifecycleOwner, Observer { subjects ->
+            listAdapter.setSubjects(subjects)
+            Log.d("matjon", "observe ${subjects.first().dayOfWeek}" )
+            (view.parent as? ViewGroup)?.doOnPreDraw {
+                startPostponedEnterTransition()
+            }
+        })
+        listAdapter.setOnItemClickListener { position,extras ->
+            val id = viewModel.subjectsOfDayLiveData.value?.get(position)?.id ?: -1
+            val action = MainFragmentDirections.actionFragmentMainToCardViewFragment(id)
+            findNavController().navigate(action)
+
         }
     }
+
 
 }

@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:padding="@dimen/widget_margin"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.Schedulize.AppWidgetContainer">
+
+    <TextView
+        android:id="@+id/appwidget_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/appwidget_title_text"
+        android:text="@string/appwidget_title_text"
+        android:textColor="?attr/appWidgetTextColor"
+        android:textSize="@dimen/subtitle_1"
+        android:textStyle="bold|italic" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp">
+        <ListView
+            android:id="@+id/widget_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+<!--        <TextView-->
+<!--            android:id="@+id/widget_empty_text"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@string/schedulize_is_empty"-->
+<!--            android:textSize="@dimen/subtitle_1"-->
+<!--            android:textColor="@color/on_surface_100"/>-->
+    </FrameLayout>
+
+
+</LinearLayout>

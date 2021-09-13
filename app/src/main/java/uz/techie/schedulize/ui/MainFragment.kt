@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -23,29 +24,39 @@ class MainFragment : Fragment() {
 
     private val viewModel: MainFragmentViewModel by viewModels()
 
-    private var _binding:FragmentMainBinding? = null
+    private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val toolbar = activity?.findViewById<Toolbar>(R.id.toolbar)
-        toolbar?.apply {
-            setTitle(R.string.app_name)
-            setBackgroundResource(R.color.primary)
-            navigationIcon = null
-        }
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMainBinding.inflate(inflater,container,false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
+
+        binding.toolbar.apply {
+            setTitle(R.string.app_name)
+            setBackgroundResource(R.color.primary)
+            inflateMenu(R.menu.main_menu)
+            setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.add_subject -> {
+                        findNavController().navigate(R.id.action_fragmentMain_to_addFragment)
+                        true
+                    }
+                    R.id.setting -> {
+                        findNavController().navigate(R.id.action_fragmentMain_to_settingFragment)
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }
+
 
         viewModel.isSubjectDataSourceIsEmptyLiveData.observe(viewLifecycleOwner) { isEmpty ->
 
@@ -60,8 +71,8 @@ class MainFragment : Fragment() {
                 binding.viewPager.visibility = View.VISIBLE
 
 
-
-                val adapter = ViewPagerAdapter(requireActivity().supportFragmentManager, lifecycle)
+                val adapter =
+                    ViewPagerAdapter(requireActivity().supportFragmentManager, lifecycle)
 
                 viewModel.listOfDayOfWeekFromRepositoryLiveData.observe(viewLifecycleOwner) { listOfDays ->
                     adapter.setListDayOfWeek(listOfDays)
@@ -74,11 +85,9 @@ class MainFragment : Fragment() {
                     binding.viewPager.adapter = adapter
                     binding.viewPager.offscreenPageLimit = 2
                     TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-                        tab.text =  viewModel.listNamesOfDayResource[position]
+                        tab.text = viewModel.listNamesOfDayResource[position]
                     }.attach()
                 }
-
-
 
 
             }
@@ -87,24 +96,6 @@ class MainFragment : Fragment() {
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.main_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.add_subject -> {
-                findNavController().navigate(R.id.action_fragmentMain_to_addFragment)
-                true
-            }
-            R.id.setting -> {
-                findNavController().navigate(R.id.action_fragmentMain_to_settingFragment)
-                true
-            }
-            else -> false
-        }
-    }
 
     override fun onDestroy() {
         super.onDestroy()

@@ -15,7 +15,7 @@ class SubjectPeriod(val start:Time, val end:Time?){
             try {
                 end = Time.valueOf(period.substringAfter("/"))
             }catch (e:IllegalArgumentException){
-                Log.d(TAG,period,e)
+
             }
              return SubjectPeriod(start!!,end)
         }
