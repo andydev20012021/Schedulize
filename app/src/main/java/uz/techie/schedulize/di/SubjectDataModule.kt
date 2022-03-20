@@ -1,13 +1,11 @@
 package uz.techie.schedulize.di
 
-import androidx.room.RoomDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.components.SingletonComponent
 import uz.techie.schedulize.db.SubjectsListDataBase
-import uz.techie.schedulize.repositories.RoomSubjectDataSource
+import uz.techie.schedulize.db.RoomSubjectDataSource
 import uz.techie.schedulize.repositories.SubjectLocalDataSource
 import uz.techie.schedulize.repositories.SubjectRepository
 import javax.inject.Singleton

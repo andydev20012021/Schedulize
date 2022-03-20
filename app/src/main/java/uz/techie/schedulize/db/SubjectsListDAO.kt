@@ -2,39 +2,35 @@ package uz.techie.schedulize.db
 
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
-import uz.techie.schedulize.models.Subject
-import java.time.DayOfWeek
+import uz.techie.schedulize.db.models.DBSubjectModel
 
 @Dao
 interface SubjectsListDAO {
     @Query("Select * From subject")
-    fun getAllSubjects():Flow<List<Subject>>
+    fun getAllSubjects(): Flow<List<DBSubjectModel>>
 
-    @Query("Select * From ${Subject.TABLE_NAME} where dayOfWeek=(:day)")
-    fun getAllSubjectsOfDay(day:Int):Flow<List<Subject>>
+    @Query("Select * From ${DBSubjectModel.TABLE_NAME} where dayOfWeek=(:day)")
+    fun getAllSubjectsOfDay(day: String): Flow<List<DBSubjectModel>>
 
-    @Query("Select * From ${Subject.TABLE_NAME} where id=(:id)")
-    fun getSubjectById(id:Int):Flow<Subject>
+    @Query("Select * From ${DBSubjectModel.TABLE_NAME} where id=(:id)")
+    fun getSubjectById(id: Int): Flow<DBSubjectModel>
 
-    @Query("Select dayOfWeek from ${Subject.TABLE_NAME} group by dayOfWeek")
-    fun getDaysOfWeek():Flow<List<Int>>
-//
-//    @Query("Select count(id) from ${Subject.TABLE_NAME} ")
-//    fun getSubjectsCount():Flow<Int>
+    @Query("Select dayOfWeek from ${DBSubjectModel.TABLE_NAME} group by dayOfWeek")
+    fun getDaysOfWeek(): Flow<List<String>>
 
-    @Insert(entity = Subject::class,onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(subject: Subject)
+    @Insert(entity = DBSubjectModel::class, onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(subject: DBSubjectModel)
 
-    @Update(entity = Subject::class)
-    suspend fun update(subject: Subject)
+    @Update(entity = DBSubjectModel::class)
+    suspend fun update(subject: DBSubjectModel)
 
-    @Delete(entity = Subject::class)
-    suspend fun delete(subject: Subject)
+    @Delete(entity = DBSubjectModel::class)
+    suspend fun delete(subject: DBSubjectModel)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(subjects:List<Subject>)
+    suspend fun insertAll(subjects: List<DBSubjectModel>)
 
-    @Query("Delete From ${Subject.TABLE_NAME}")
+    @Query("Delete From ${DBSubjectModel.TABLE_NAME}")
     suspend fun deleteAll()
 
 }

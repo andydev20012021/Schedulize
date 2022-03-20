@@ -7,63 +7,56 @@
 
     <fragment
         android:id="@+id/fragmentMain"
-        android:name="uz.techie.schedulize.ui.MainFragment"
+        android:name="uz.techie.schedulize.ui.screens.main.HomeScreen"
         android:label="fragment_main_fragment"
-        tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_fragmentMain_to_addFragment"
-            app:destination="@id/addFragment" />
-        <action
-            android:id="@+id/action_fragmentMain_to_cardViewFragment"
-            app:destination="@id/cardViewFragment" />
+        tools:layout="@layout/screen_home">
         <action
             android:id="@+id/action_fragmentMain_to_settingFragment"
-            app:destination="@id/settingFragment" />
+            app:destination="@id/settingScreen" />
+        <action
+            android:id="@+id/action_fragmentMain_to_addFragment"
+            app:destination="@id/addScreen" />
+        <action
+            android:id="@+id/action_fragmentMain_to_cardDetailScreen"
+            app:destination="@id/cardDetailScreen">
+        </action>
 
     </fragment>
     <fragment
-        android:id="@+id/addFragment"
-        android:name="uz.techie.schedulize.ui.add.AddFragment"
+        android:id="@+id/addScreen"
+        android:name="uz.techie.schedulize.ui.screens.add.AddScreen"
         android:label="add_fragment"
-        tools:layout="@layout/add_fragment" >
-
-        <argument android:name="arg_subject_id"
-            app:argType="integer"
-            android:defaultValue="-1" />
+        tools:layout="@layout/screen_add">
+        <argument
+            android:name="arg_subject_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/cardViewFragment"
-        android:name="uz.techie.schedulize.ui.cardview.CardViewFragment"
+        android:id="@+id/cardDetailScreen"
+        android:name="uz.techie.schedulize.ui.screens.cardview.CardDetailScreen"
         android:label="card_view_fragment"
-        tools:layout="@layout/card_view_fragment" >
+        tools:layout="@layout/screen_card_details">
         <action
-            android:id="@+id/action_cardViewFragment_to_addFragment"
-            app:destination="@id/addFragment" />
-        <action
-            android:id="@+id/action_cardViewFragment_to_fragmentMain"
-            app:destination="@id/fragmentMain"
-            app:launchSingleTop="true" />
+            android:id="@+id/action_cardViewScreen_to_addScreen"
+            app:destination="@id/addScreen" />
         <argument
-            android:name="arg_view_subject_id"
+            android:name="arg_subject_id"
             app:argType="integer" />
     </fragment>
 
     <fragment
-        android:id="@+id/settingFragment"
-        android:name="uz.techie.schedulize.ui.SettingFragment"
+        android:id="@+id/settingScreen"
+        android:name="uz.techie.schedulize.ui.screens.setting.SettingFragment"
         android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" >
-        <action
-            android:id="@+id/action_settingFragment_to_fragmentMain"
-            app:launchSingleTop="true"
-            app:destination="@id/fragmentMain" />
-    </fragment>
+        tools:layout="@layout/screen_settings" />
 
     <fragment
-        android:id="@+id/cardListFragment"
-        android:name="uz.techie.schedulize.ui.list.CardListFragment"
+        android:id="@+id/cardListScreen"
+        android:name="uz.techie.schedulize.ui.screens.list.CardListScreen"
         android:label="card_list_fragment"
-        tools:layout="@layout/card_list_fragment" />
+        tools:layout="@layout/screen_card_list">
+    </fragment>
 </navigation>

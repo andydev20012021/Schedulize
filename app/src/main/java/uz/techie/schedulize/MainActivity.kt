@@ -1,28 +1,45 @@
 package uz.techie.schedulize
 
-import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
-import androidx.annotation.ColorRes
-import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
-import androidx.preference.PreferenceManager
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.view.WindowCompat
 import com.akexorcist.localizationactivity.ui.LocalizationActivity
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
-import uz.techie.schedulize.utils.StatusBarSetColorCallBack
 
 @AndroidEntryPoint
-class MainActivity : LocalizationActivity(), StatusBarSetColorCallBack {
-    lateinit var toolbar:Toolbar
+class MainActivity : LocalizationActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Firebase.analytics.logEvent(FirebaseAnalytics.Event.APP_OPEN){
+            param("lang",getCurrentLanguage().language)
+            param("theme",AppCompatDelegate.getDefaultNightMode().toLong())
+        }
 
-        window.navigationBarColor = ContextCompat.getColor(this,R.color.primary)
-
+        decorFitsSystemWindows()
     }
 
-    override fun setStatusBarColor(@ColorRes color : Int) {
-        window.statusBarColor = ContextCompat.getColor(this,color)
+    private fun decorFitsSystemWindows(){
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        window.statusBarColor = Color.parseColor("#00000000")
+        window.navigationBarColor = Color.parseColor("#00000000")
+    }
+
+
+
+    override fun onBackPressed() {
+        if (isBackPressable)
+            super.onBackPressed()
+    }
+
+    companion object {
+        var isBackPressable = true
     }
 }

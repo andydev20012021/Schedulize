@@ -1,97 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="application_name">Schedulize</string>
 
     <string name="app_name">Dars jadvali</string>
 
 
-    <string name="add_fragment" >Kiritish</string>
-    <string name="edit_fragment" >Tahrirlash</string>
-    <string name="setting_fragment" >Sozlamalar</string>
+    <string name="add_fragment">Kiritish</string>
+    <string name="edit_fragment">Tahrirlash</string>
+    <string name="setting_fragment">Sozlamalar</string>
 
 
     //Subject
-    <string name="subject_name" >Fan</string>
-    <string name="subject_day_of_week" >Hafta kuni</string>
-    <string name="subject_start_time" >Kirish</string>
-    <string name="subject_end_time" >Chiqish</string>
-    <string name="subject_teacher" >O\'qituvchi</string>
-    <string name="subject_place" >Joy</string>
+    <string name="subject_name">Fan</string>
+    <string name="subject_day_of_week">Hafta kuni</string>
+    <string name="subject_start_time">Kirish</string>
+    <string name="subject_end_time">Chiqish</string>
+    <string name="subject_teacher">O\'qituvchi</string>
+    <string name="subject_place">Joy</string>
 
     //Day of week
-    <string-array name="day_of_week">
-        <item name="monday">Dushanba</item>
-        <item name="tuesday">Seshanba</item>
-        <item name="wednesday">Chorshanba</item>
-        <item name="thursday">Payshanba</item>
-        <item name="friday">Juma</item>
-        <item name="saturday">Shanba</item>
-        <item name="sunday">Yakshanba</item>
-    </string-array>
+    <string name="monday">Dushanba</string>
+    <string name="tuesday">Seshanba</string>
+    <string name="wednesday">Chorshanba</string>
+    <string name="thursday">Payshanba</string>
+    <string name="friday">Juma</string>
+    <string name="saturday">Shanba</string>
+    <string name="sunday">Yakshanba</string>
 
     //dialog text
-    <string name="dialog_delete" >Rostan o\'chirmoqchimisiz?</string>
-    <string name="dialog_pick_time" >Vaqtni tanlang</string>
+    <string name="dialog_delete">Rostan o\'chirmoqchimisiz?</string>
+    <string name="dialog_pick_time">Vaqtni tanlang</string>
     <string name="dialog_cancel">Bekor qilish</string>
 
 
     //Text in mainActivity
-    <string name="schedulize_is_empty" >Ayni vaqtda dars jadvali bo’sh. Jadvalga dars kiritish uchun yuqoridagi “+” tugmasini bosing</string>
+    <string name="schedulize_is_empty">Ayni vaqtda dars jadvali bo’sh. Jadvalga dars kiritish uchun yuqoridagi “+” tugmasini bosing</string>
 
     //Helper text
-    <string name="may_be_empty" >Ixtiyoriy</string>
+    <string name="may_be_empty">Ixtiyoriy</string>
 
     //Error text
-    <string name="error_empty" >Talab qilinadis</string>
+    <string name="error_empty">Talab qilinadis</string>
 
     //Menu
-    <string name="add_subject" >Kiritish</string>
-    <string name="setting" >Sozlamaalar</string>
-    <string name="edit" >Tahrirlash</string>
-    <string name="delete" >O\'chirish</string>
-    <string name="save" >Saqlash</string>
+    <string name="add_subject">Kiritish</string>
+    <string name="setting">Sozlamaalar</string>
+    <string name="edit">Tahrirlash</string>
+    <string name="delete">O\'chirish</string>
+    <string name="save">Saqlash</string>
 
     <!-- Preference Titles -->
-    <string name="general" >Umumiy</string>
-    <string name="data" >Ma\'lumotlar</string>
-    <string name="about_app" >Ilova haqida</string>
+    <string name="general">Umumiy</string>
+    <string name="data">Ma\'lumotlar</string>
+    <string name="about_app">Ilova haqida</string>
 
     <!-- general Preferences -->
-    <string name="notification_title" >Bildirishnomalar</string>
-    <string name="language_title" >Til</string>
-    <string name="theme_title" >Qorong\'u rejim</string>
-    <string name="notification_summary" >Bildirishnomalar sozlamalari</string>
+    <string name="notification_title">Bildirishnomalar</string>
+    <string name="language_title">Til</string>
+    <string name="theme_title">Qorong\'u rejim</string>
+    <string name="notification_summary">Bildirishnomalar sozlamalari</string>
 
     <!-- Data Preferences -->
-    <string name="export_title" >Eksport</string>
-    <string name="import_title" >Import</string>
-    <string name="export_summary" >Dars jadvalini eksportlash</string>
-    <string name="import_summary" >Dars jadvalini importlash</string>
+    <string name="export_title">Eksport</string>
+    <string name="import_title">Import</string>
+    <string name="export_summary">Dars jadvalini eksportlash</string>
+    <string name="import_summary">Dars jadvalini importlash</string>
 
     <!-- About app Preferences -->
-    <string name="version_title" >Ilova versiyasi</string>
-    <string name="manager_title" >Loyiha menejeri va dizayner</string>
-    <string name="programmer_title" >Dasturchi</string>
-    <string name="telegram_title" >Telegram</string>
-    <string name="telegram_summary" >Loyihaning Telegram chati</string>
+    <string name="version_title">Ilova versiyasi</string>
+    <string name="manager_title">Loyiha menejeri va dizayner</string>
+    <string name="programmer_title">Dasturchi</string>
+    <string name="telegram_title">Telegram</string>
+    <string name="telegram_summary">Loyihaning Telegram chati</string>
 
-    <string-array name="languages_entries">
-        <item>English</item>
-        <item>Русский</item>
-        <item>O\'zbekcha</item>
-    </string-array>
-    <string-array name="languages_values">
-        <item>en</item>
-        <item>ru</item>
-        <item>uz</item>
-    </string-array>
-
-    <string-array name="theme_entries">
-        <item>Tizimdagi kabi</item>
-        <item>Yorqin</item>
-        <item>Qorong\'u</item>
-    </string-array>
-
+    <string name="theme_system">Tizimdagi kabi</string>
+    <string name="theme_light">Yorqin</string>
+    <string name="theme_dark">Qorong\'u</string>
 
     <string name="appwidget_title_text">Bugungi dars jadvali</string>
     <string name="add_widget">Add widget</string>

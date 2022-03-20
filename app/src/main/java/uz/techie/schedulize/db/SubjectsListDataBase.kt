@@ -2,11 +2,9 @@ package uz.techie.schedulize.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
-import uz.techie.schedulize.models.Subject
+import uz.techie.schedulize.db.models.DBSubjectModel
 
-@Database(entities = [Subject::class],version = 1)
-@TypeConverters(SubjectTypeConverters::class)
-open abstract class SubjectsListDataBase:RoomDatabase() {
+@Database(entities = [DBSubjectModel::class],version = 1)
+abstract class SubjectsListDataBase:RoomDatabase() {
     abstract fun subjectDAO():SubjectsListDAO
 }

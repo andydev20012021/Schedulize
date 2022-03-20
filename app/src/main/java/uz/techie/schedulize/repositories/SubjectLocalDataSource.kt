@@ -1,16 +1,15 @@
 package uz.techie.schedulize.repositories
 
 import kotlinx.coroutines.flow.Flow
-import uz.techie.schedulize.models.Subject
-import java.time.DayOfWeek
+import uz.techie.schedulize.db.models.DBSubjectModel
 
 interface SubjectLocalDataSource {
-    fun getAllSubjects():Flow<List<Subject>>
-    fun getAllSubjectsOfDay(dayOfWeek: Int):Flow<List<Subject>>
-    fun getSubject(id:Int):Flow<Subject>
-    fun getDaysOfWeek():Flow<List<Int>>
-//    fun getSubjectsCount():Flow<Int>
-    suspend fun insertSubject(subject: Subject)
-    suspend fun deleteSubject(subject: Subject)
-    suspend fun updateSubject(subject: Subject)
+    fun getAllSubjects(): Flow<List<DBSubjectModel>>
+    fun getAllSubjectsOfDay(dayOfWeek: String): Flow<List<DBSubjectModel>>
+    fun getSubject(id: Int): Flow<DBSubjectModel>
+    fun getDaysOfWeek(): Flow<List<String>>
+    suspend fun insertSubject(subject: DBSubjectModel)
+    suspend fun insertAllSubjects(subjects: List<DBSubjectModel>)
+    suspend fun deleteSubject(subject: DBSubjectModel)
+    suspend fun updateSubject(subject: DBSubjectModel)
 }

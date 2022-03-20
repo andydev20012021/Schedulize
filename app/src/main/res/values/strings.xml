@@ -1,7 +1,9 @@
 <resources>
-    <string name="application_name">Schedulize</string>
+    <string name="application_name" translatable="false">Schedulize</string>
     <string name="app_name">Schedulize</string>
     <string name="add_fragment">Add</string>
+    <string name="developer" translatable="false">Matjon</string>
+    <string name="manager_and_designer" translatable="false">Azizjon Akramov</string>
 
     <string name="edit_fragment">Edit</string>
     <string name="setting_fragment">Settings</string>
@@ -14,15 +16,13 @@
     <string name="subject_place">Place</string>
     //Day of week
 
-    <string-array name="day_of_week">
-        <item name="monday">Monday</item>
-        <item name="tuesday">Tuesday</item>
-        <item name="wednesday">Wednesday</item>
-        <item name="thursday">Thursday</item>
-        <item name="friday">Friday</item>
-        <item name="saturday">Saturday</item>
-        <item name="sunday">Sunday</item>
-    </string-array>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
 
     //dialog text
     <string name="dialog_delete">Do you really want to delete?</string>
@@ -65,29 +65,20 @@
     <string name="telegram_title">Telegram</string>
     <string name="telegram_summary">Telegram chat of the project</string>
 
+    <string name="english" translatable="false">English</string>
+    <string name="russia" translatable="false">Русский</string>
+    <string name="uzbek" translatable="false">O\'zbekcha</string>
 
-    <string-array name="languages_entries">
-        <item>English</item>
-        <item>Русский</item>
-        <item>O\'zbekcha</item>
-    </string-array>
+    <string name="english_code" translatable="false">en</string>
+    <string name="russia_code" translatable="false">ru</string>
+    <string name="uzbek_code" translatable="false">uz</string>
 
-    <string-array name="languages_values">
-        <item>en</item>
-        <item>ru</item>
-        <item>uz</item>
-    </string-array>
-
-    <string-array name="theme_entries">
-        <item>System default</item>
-        <item>Light</item>
-        <item>Dark</item>
-    </string-array>
+    <string name="theme_system">System default</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
 
     <string name="appwidget_title_text">Today\'s lesson schedule</string>
     <string name="add_widget">Add widget</string>
-
-
 
 
 </resources>

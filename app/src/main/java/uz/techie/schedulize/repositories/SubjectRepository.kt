@@ -1,31 +1,33 @@
 package uz.techie.schedulize.repositories
 
 import kotlinx.coroutines.flow.Flow
-import uz.techie.schedulize.models.Subject
-import java.time.DayOfWeek
+import uz.techie.schedulize.db.models.DBSubjectModel
 
 class SubjectRepository(
     private val subjectLocalDataSource: SubjectLocalDataSource
 ) {
-    suspend fun insertSubject(subject: Subject){
+    suspend fun insertSubject(subject: DBSubjectModel) {
         subjectLocalDataSource.insertSubject(subject)
     }
 
-    suspend fun deleteSubject(subject: Subject){
+    suspend fun insertAllSubjects(subjects: List<DBSubjectModel>){
+        subjectLocalDataSource.insertAllSubjects(subjects)
+    }
+
+    suspend fun deleteSubject(subject: DBSubjectModel) {
         subjectLocalDataSource.deleteSubject(subject)
     }
 
-    suspend fun updateSubject(subject: Subject){
+    suspend fun updateSubject(subject: DBSubjectModel) {
         subjectLocalDataSource.updateSubject(subject)
     }
 
-    fun getAllSubjectsOfDay(dayOfWeek: Int):Flow<List<Subject>> = subjectLocalDataSource.getAllSubjectsOfDay(dayOfWeek)
+    fun getAllSubjectsOfDay(dayOfWeek: String): Flow<List<DBSubjectModel>> =
+        subjectLocalDataSource.getAllSubjectsOfDay(dayOfWeek)
 
-     fun getAllSubjects(): Flow<List<Subject>> = subjectLocalDataSource.getAllSubjects()
+    fun getAllSubjects(): Flow<List<DBSubjectModel>> = subjectLocalDataSource.getAllSubjects()
 
-    fun getSubjectById(id: Int): Flow<Subject> = subjectLocalDataSource.getSubject(id)
+    fun getSubjectById(id: Int): Flow<DBSubjectModel> = subjectLocalDataSource.getSubject(id)
 
-    fun getDaysOfWeek(): Flow<List<Int>> = subjectLocalDataSource.getDaysOfWeek()
-
-//    fun getSubjectsCount():Flow<Int> = subjectLocalDataSource.getSubjectsCount()
+    fun getDaysOfWeek(): Flow<List<String>> = subjectLocalDataSource.getDaysOfWeek()
 }

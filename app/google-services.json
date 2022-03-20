@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "181777588857",
+    "project_id": "schedulize-544a4",
+    "storage_bucket": "schedulize-544a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181777588857:android:d9361508a313145da72aa8",
+        "android_client_info": {
+          "package_name": "uz.techie.schedulize"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181777588857-evjnded7enal7q5hvnk8uv51a6h9ot1s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uz.techie.schedulize",
+            "certificate_hash": "ccfd7680cfd8d0924db5bb7bff986bea3f6b0e5c"
+          }
+        },
+        {
+          "client_id": "181777588857-pr79va3or0jkqgrkgqrvtamqjbr488v8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtiiHdApBMZxkHpkgb2AAtH2ervnrsl6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181777588857-pr79va3or0jkqgrkgqrvtamqjbr488v8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

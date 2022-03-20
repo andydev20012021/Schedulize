@@ -1,96 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Расписание</string>
-    <string name="application_name">Schedulize</string>
 
 
-
-    <string name="add_fragment" >Добавить</string>
-    <string name="edit_fragment" >Редактировать</string>
-    <string name="setting_fragment" >Настройки</string>
+    <string name="add_fragment">Добавить</string>
+    <string name="edit_fragment">Редактировать</string>
+    <string name="setting_fragment">Настройки</string>
 
 
     //Subject
-    <string name="subject_name" >Предмет</string>
-    <string name="subject_day_of_week" >День недели</string>
-    <string name="subject_start_time" >Начало</string>
-    <string name="subject_end_time" >Конец</string>
-    <string name="subject_teacher" >Учитель</string>
-    <string name="subject_place" >Место</string>
+    <string name="subject_name">Предмет</string>
+    <string name="subject_day_of_week">День недели</string>
+    <string name="subject_start_time">Начало</string>
+    <string name="subject_end_time">Конец</string>
+    <string name="subject_teacher">Учитель</string>
+    <string name="subject_place">Место</string>
 
     //Day of week
-    <string-array name="day_of_week">
-        <item name="monday">Понедельник</item>
-        <item name="tuesday">Вторник</item>
-        <item name="wednesday">Среда</item>
-        <item name="thursday">Четверг</item>
-        <item name="friday">Пятница</item>
-        <item name="saturday">Субота</item>
-        <item name="sunday">Воскресенье</item>
-    </string-array>
+    <string name="monday">Понедельник</string>
+    <string name="tuesday">Вторник</string>
+    <string name="wednesday">Среда</string>
+    <string name="thursday">Четверг</string>
+    <string name="friday">Пятница</string>
+    <string name="saturday">Субота</string>
+    <string name="sunday">Воскресенье</string>
 
     //dialog text
-    <string name="dialog_delete" >Вы действительно хотите удалить?</string>
-    <string name="dialog_pick_time" >Выберите время</string>
+    <string name="dialog_delete">Вы действительно хотите удалить?</string>
+    <string name="dialog_pick_time">Выберите время</string>
     <string name="dialog_cancel">Отмена</string>
 
 
     //Text in mainActivity
-    <string name="schedulize_is_empty" >Расписание на данный момент пусто. Чтобы добавить урок в таблицу нажмите кнопку "+" выше</string>
+    <string name="schedulize_is_empty">Расписание на данный момент пусто. Чтобы добавить урок в таблицу нажмите кнопку "+" выше</string>
 
     //Helper text
-    <string name="may_be_empty" >По желанию</string>
+    <string name="may_be_empty">По желанию</string>
 
     //Error text
-    <string name="error_empty" >Обязательный</string>
+    <string name="error_empty">Обязательный</string>
 
     //Menu
-    <string name="add_subject" >Добавыть</string>
-    <string name="setting" >Настройки</string>
-    <string name="edit" >Редактировать</string>
-    <string name="delete" >Удалить</string>
-    <string name="save" >Сохранить</string>
+    <string name="add_subject">Добавыть</string>
+    <string name="setting">Настройки</string>
+    <string name="edit">Редактировать</string>
+    <string name="delete">Удалить</string>
+    <string name="save">Сохранить</string>
 
     <!-- Preference Titles -->
-    <string name="general" >Общие</string>
-    <string name="data" >Данные</string>
-    <string name="about_app" >О приложении</string>
+    <string name="general">Общие</string>
+    <string name="data">Данные</string>
+    <string name="about_app">О приложении</string>
 
     <!-- general Preferences -->
-    <string name="notification_title" >Уведомления</string>
-    <string name="language_title" >Язык</string>
-    <string name="theme_title" >Темный режим</string>
-    <string name="notification_summary" >Настройки уведомлений</string>
+    <string name="notification_title">Уведомления</string>
+    <string name="language_title">Язык</string>
+    <string name="theme_title">Темный режим</string>
+    <string name="notification_summary">Настройки уведомлений</string>
 
     <!-- Data Preferences -->
-    <string name="export_title" >Экспорт</string>
-    <string name="import_title" >Импорт</string>
-    <string name="export_summary" >Экспортировать расписание</string>
-    <string name="import_summary" >Импортировать расписание</string>
+    <string name="export_title">Экспорт</string>
+    <string name="import_title">Импорт</string>
+    <string name="export_summary">Экспортировать расписание</string>
+    <string name="import_summary">Импортировать расписание</string>
 
     <!-- About app Preferences -->
-    <string name="version_title" >Версия</string>
-    <string name="manager_title" >Менеджер проекта и дизайнер</string>
-    <string name="programmer_title" >Программист</string>
-    <string name="telegram_title" >Telegram</string>
-    <string name="telegram_summary" >Телеграм чат проекта</string>
+    <string name="version_title">Версия</string>
+    <string name="manager_title">Менеджер проекта и дизайнер</string>
+    <string name="programmer_title">Программист</string>
+    <string name="telegram_title">Telegram</string>
+    <string name="telegram_summary">Телеграм чат проекта</string>
 
-    <string-array name="languages_entries">
-        <item>English</item>
-        <item>Русский</item>
-        <item>O\'zbekcha</item>
-    </string-array>
-    <string-array name="languages_values">
-        <item>en</item>
-        <item>ru</item>
-        <item>uz</item>
-    </string-array>
-
-    <string-array name="theme_entries">
-        <item>Как в системе</item>
-        <item>Светлая</item>
-        <item>Темная</item>
-    </string-array>
+    <string name="theme_system">Как в системе</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Темная</string>
 
 
     <string name="appwidget_title_text">Расписание уроков на сегодня</string>

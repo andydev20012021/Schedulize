@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/primary"
+        app:menu="@menu/menu_add_fragment"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/setting_fragment"
+        app:titleTextColor="@color/on_surface_100" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            tools:context=".ui.screens.add.AddScreen">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/subject_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/basic_margin_horizontal"
+                android:layout_marginTop="8dp"
+                app:errorEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/on_surface_300">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/secondary"
+                    android:hint="@string/subject_name"
+                    android:inputType="text"
+                    android:textColor="@color/on_surface_100" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/basic_margin_horizontal"
+                android:layout_marginTop="28dp"
+                app:errorEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/on_surface_300">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/subject_day"
+                    style="@style/Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/secondary"
+                    android:hint="@string/subject_day_of_week"
+                    android:inputType="none"
+                    android:textColor="@color/on_surface_100" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/basic_margin_horizontal"
+                android:layout_marginTop="28dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/subject_start_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:hint="@string/subject_start_time"
+                    app:errorEnabled="true"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/on_surface_300">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/secondary"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:textColor="@color/on_surface_100"
+                        android:textIsSelectable="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/subject_end_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:hint="@string/subject_end_time"
+                    app:helperText="@string/may_be_empty"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/on_surface_300">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/secondary"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:textColor="@color/on_surface_100" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/subject_teacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/basic_margin_horizontal"
+                android:layout_marginTop="28dp"
+                app:helperText="@string/may_be_empty"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/on_surface_300">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/secondary"
+                    android:hint="@string/subject_teacher"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/on_surface_100" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/subject_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/basic_margin_horizontal"
+                android:layout_marginTop="28dp"
+                app:helperText="@string/may_be_empty"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/on_surface_300">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/secondary"
+                    android:hint="@string/subject_place"
+                    android:inputType="text"
+                    android:textColor="@color/on_surface_100" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/colorRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
