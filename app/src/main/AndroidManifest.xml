@@ -4,9 +4,9 @@
 
     <application
         android:name=".app.SchedulizeApp"
-        android:icon="@drawable/ic_schedulize"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/application_name"
-        android:roundIcon="@drawable/ic_schedulize"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Schedulize">
         <!--        <service android:name=".ui.services.SchedulizeWidgetService"-->

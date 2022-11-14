@@ -4,7 +4,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import uz.techie.schedulize.ui.models.DayOfWeek
-import uz.techie.schedulize.ui.screens.list.CardListScreen
+import uz.techie.schedulize.ui.screens.main.list.CardListScreen
 
 class ViewPagerAdapter(
     fm: FragmentManager,

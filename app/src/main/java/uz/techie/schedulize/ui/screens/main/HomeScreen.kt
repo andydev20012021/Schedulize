@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
@@ -25,25 +26,17 @@ import uz.techie.schedulize.utils.extentions.doOnApplyWindowInsets
 import uz.techie.schedulize.utils.extentions.statusBarsInsets
 
 @AndroidEntryPoint
-class HomeScreen : Fragment() {
+class HomeScreen : Fragment(R.layout.screen_home) {
     private val TAG = HomeScreen::class.java.canonicalName
 
     private val viewModel: HomeScreenViewModel by viewModels()
 
-    private var _binding: ScreenHomeBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<ScreenHomeBinding>()
 
     private lateinit var adapter: ViewPagerAdapter
     private var tabLayoutMediator: TabLayoutMediator? = null
 
     private var days = emptyList<DayOfWeek>()
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = ScreenHomeBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initView()
@@ -95,7 +88,6 @@ class HomeScreen : Fragment() {
         tabLayoutMediator?.attach()
     }
 
-
     private fun initClicks() {
         binding.toolbar.apply {
             setOnMenuItemClickListener {
@@ -112,11 +104,5 @@ class HomeScreen : Fragment() {
                 }
             }
         }
-    }
-
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 }

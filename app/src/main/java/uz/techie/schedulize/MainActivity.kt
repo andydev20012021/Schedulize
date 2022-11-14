@@ -22,17 +22,7 @@ class MainActivity : LocalizationActivity() {
             param("lang",getCurrentLanguage().language)
             param("theme",AppCompatDelegate.getDefaultNightMode().toLong())
         }
-
-        decorFitsSystemWindows()
     }
-
-    private fun decorFitsSystemWindows(){
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.statusBarColor = Color.parseColor("#00000000")
-        window.navigationBarColor = Color.parseColor("#00000000")
-    }
-
-
 
     override fun onBackPressed() {
         if (isBackPressable)

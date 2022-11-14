@@ -5,7 +5,7 @@
     android:id="@+id/recycler"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.screens.list.CardListScreen"
+    tools:context=".ui.screens.main.list.CardListScreen"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     tools:listitem="@layout/item_card"
     android:background="@color/primary"

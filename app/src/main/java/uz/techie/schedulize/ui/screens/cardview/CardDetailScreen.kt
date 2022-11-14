@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.transition.TransitionInflater
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.analytics.ktx.logEvent
@@ -25,23 +26,13 @@ import uz.techie.schedulize.utils.extentions.doOnApplyWindowInsets
 import uz.techie.schedulize.utils.extentions.statusBarsInsets
 
 @AndroidEntryPoint
-class CardDetailScreen : Fragment() {
+class CardDetailScreen : Fragment(R.layout.screen_card_details) {
     private val TAG = CardDetailScreen::class.java.canonicalName
 
     private val args: CardDetailScreenArgs by navArgs()
     private val screenViewModel: CardViewScreenViewModel by viewModels()
 
-    private var _binding: ScreenCardDetailsBinding? = null
-    private val binding get() = _binding!!
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = ScreenCardDetailsBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    private val binding by viewBinding<ScreenCardDetailsBinding>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setClickListeners()
@@ -119,10 +110,5 @@ class CardDetailScreen : Fragment() {
     private fun requireDelete() {
         screenViewModel.deleteSubject()
         findNavController().popBackStack()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 }

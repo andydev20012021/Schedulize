@@ -18,6 +18,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.akexorcist.localizationactivity.ui.LocalizationActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -41,12 +42,11 @@ import uz.techie.schedulize.utils.extentions.systemBarsInsets
 import uz.techie.schedulize.utils.extentions.visible
 
 @AndroidEntryPoint
-class SettingFragment : Fragment() {
+class SettingFragment : Fragment(R.layout.screen_settings) {
 
     private val viewModel by viewModels<SettingViewModel>()
 
-    private var _binding: ScreenSettingsBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<ScreenSettingsBinding>()
 
     private lateinit var sharedPref: SharedPreferences
 
@@ -58,14 +58,6 @@ class SettingFragment : Fragment() {
     private fun getCurrentTheme(): ThemeUtil {
         val themeId = sharedPref.getInt(ThemeUtil.name, ThemeUtil.MODE_NIGHT_FOLLOW_SYSTEM.id)
         return ThemeUtil.findById(themeId)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = ScreenSettingsBinding.inflate(inflater, container, false)
-        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -230,11 +222,6 @@ class SettingFragment : Fragment() {
         } else {
             Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 
     companion object {

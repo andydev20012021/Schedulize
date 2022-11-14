@@ -1,4 +1,4 @@
-package uz.techie.schedulize.ui.screens.list
+package uz.techie.schedulize.ui.screens.main.list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

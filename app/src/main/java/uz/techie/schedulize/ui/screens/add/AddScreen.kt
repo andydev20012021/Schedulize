@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -30,26 +31,17 @@ import uz.techie.schedulize.utils.extentions.systemBarsInsets
 import java.sql.Time
 
 @AndroidEntryPoint
-class AddScreen : Fragment() {
+class AddScreen : Fragment(R.layout.screen_add) {
 
     private val viewModel: AddScreenViewModel by viewModels()
 
     private val args: AddScreenArgs by navArgs()
 
-    private var _binding: ScreenAddBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<ScreenAddBinding>()
 
     private lateinit var dropDownAdapter: ArrayAdapter<String>
     private lateinit var colorPickAdapter: CardColorPickAdapter
     private var selectedDayOfWeek: DayOfWeek? = null
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = ScreenAddBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Log.d(TAG, "onViewCreated: ")
@@ -225,11 +217,6 @@ class AddScreen : Fragment() {
             }
         }
         picker.show(childFragmentManager, "$extra_dialog")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     companion object {

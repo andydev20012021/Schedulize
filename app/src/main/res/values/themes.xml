@@ -12,7 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
-
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:navigationBarColor">@android:color/white</item>
 
         <!-- Customize your theme here. -->
         <item name="android:textColorPrimary">@color/on_surface_100</item>

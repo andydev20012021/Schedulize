@@ -55,7 +55,7 @@
 
     <fragment
         android:id="@+id/cardListScreen"
-        android:name="uz.techie.schedulize.ui.screens.list.CardListScreen"
+        android:name="uz.techie.schedulize.ui.screens.main.list.CardListScreen"
         android:label="card_list_fragment"
         tools:layout="@layout/screen_card_list">
     </fragment>

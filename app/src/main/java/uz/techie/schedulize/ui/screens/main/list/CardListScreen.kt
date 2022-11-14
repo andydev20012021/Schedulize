@@ -1,4 +1,4 @@
-package uz.techie.schedulize.ui.screens.list
+package uz.techie.schedulize.ui.screens.main.list
 
 import android.os.Bundle
 import android.util.Log
@@ -13,8 +13,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import uz.techie.schedulize.R
 import uz.techie.schedulize.databinding.ScreenCardListBinding
 import uz.techie.schedulize.ui.adapters.CardRecyclerAdapter
 import uz.techie.schedulize.ui.models.DayOfWeek
@@ -23,23 +25,13 @@ import uz.techie.schedulize.utils.extentions.doOnApplyWindowInsets
 import uz.techie.schedulize.utils.extentions.navigationBarsInsets
 
 @AndroidEntryPoint
-class CardListScreen : Fragment() {
+class CardListScreen : Fragment(R.layout.screen_card_list) {
 
-    private var _binding: ScreenCardListBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<ScreenCardListBinding>()
 
     private val viewModel: CardListScreenViewModel by viewModels()
 
     private lateinit var listAdapter: CardRecyclerAdapter
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        postponeEnterTransition()
-        _binding = ScreenCardListBinding.inflate(inflater,container,false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.recycler.doOnApplyWindowInsets { windowInsets ->
