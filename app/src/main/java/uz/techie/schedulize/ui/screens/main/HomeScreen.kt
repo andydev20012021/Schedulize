@@ -46,11 +46,6 @@ class HomeScreen : Fragment(R.layout.screen_home) {
     }
 
     private fun initView() {
-        binding.root.doOnApplyWindowInsets { windowInsets ->
-            updatePadding(top = windowInsets.statusBarsInsets.top)
-            windowInsets
-        }
-
         adapter = ViewPagerAdapter(childFragmentManager, lifecycle)
         binding.viewPager.adapter = adapter
         binding.viewPager.offscreenPageLimit = 2

@@ -23,6 +23,7 @@ import kotlinx.coroutines.flow.collect
 import uz.techie.schedulize.R
 import uz.techie.schedulize.databinding.ScreenCardDetailsBinding
 import uz.techie.schedulize.utils.extentions.doOnApplyWindowInsets
+import uz.techie.schedulize.utils.extentions.setStatusBarColor
 import uz.techie.schedulize.utils.extentions.statusBarsInsets
 
 @AndroidEntryPoint
@@ -62,8 +63,10 @@ class CardDetailScreen : Fragment(R.layout.screen_card_details) {
         lifecycleScope.launchWhenStarted {
             screenViewModel.subject.collect { subject ->
                 binding.apply {
-                    rootLayout.setBackgroundResource(subject.color.colorRes)
-                    toolbar.setBackgroundResource(subject.color.colorRes)
+                    val color = resources.getColor(subject.color.colorRes)
+                    rootLayout.setBackgroundColor(color)
+                    toolbar.setBackgroundColor(color)
+                    requireActivity().setStatusBarColor(color)
 
                     subjectName.text = subject.subjectName
                     subjectDay.text = getString(subject.dayOfWeek.dayRes)
@@ -110,5 +113,11 @@ class CardDetailScreen : Fragment(R.layout.screen_card_details) {
     private fun requireDelete() {
         screenViewModel.deleteSubject()
         findNavController().popBackStack()
+    }
+
+    override fun onDestroyView() {
+        val color = resources.getColor(R.color.primary)
+        requireActivity().setStatusBarColor(color)
+        super.onDestroyView()
     }
 }

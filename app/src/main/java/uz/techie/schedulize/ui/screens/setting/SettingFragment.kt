@@ -1,17 +1,17 @@
 package uz.techie.schedulize.ui.screens.setting
 
 import android.app.Activity
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -26,7 +26,6 @@ import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import uz.techie.schedulize.BuildConfig
 import uz.techie.schedulize.MainActivity
@@ -83,9 +82,16 @@ class SettingFragment : Fragment(R.layout.screen_settings) {
             theme.setOnClickListener { setAppTheme() }
             exportData.setOnClickListener { exportData() }
             importData.setOnClickListener { importData() }
-            telegramLink.setOnClickListener { openAppTelegramLink(Constants.APP_TELEGRAM_URL) }
-
+            telegramLink.setOnClickListener { openAppTelegramLink(Constants.APP_TELEGRAM_URI) }
+            telegramLinkCopy.setOnClickListener { copyLinkToClipBoard() }
         }
+    }
+
+    private fun copyLinkToClipBoard() {
+        val clipBoard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clip = ClipData.newPlainText("link",Constants.APP_TELEGRAM)
+        clipBoard.setPrimaryClip(clip)
+        Toast.makeText(requireContext(), "Copied", Toast.LENGTH_SHORT).show()
     }
 
     private fun initData() {

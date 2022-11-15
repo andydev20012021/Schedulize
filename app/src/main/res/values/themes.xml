@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/on_surface_100</item>
         <item name="colorPrimaryVariant">@color/primary</item>
-        <item name="colorOnPrimary">@color/on_surface_100</item>
+        <item name="colorOnPrimary">@color/primary</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/on_surface_100</item>
         <item name="colorSecondaryVariant">@color/on_surface_200</item>
@@ -12,8 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
-        <item name="android:statusBarColor">@android:color/white</item>
-        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:navigationBarColor">@color/primary</item>
 
         <!-- Customize your theme here. -->
         <item name="android:textColorPrimary">@color/on_surface_100</item>
@@ -21,6 +21,13 @@
 
         <item name="chipStyle">@style/Widget.App.Chip</item>
         <item name="materialTimePickerTheme">@style/ThemeOverlay.MaterialComponents.TimePicker</item>
+
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">
+            @drawable/ic_launcher_foreground
+        </item>
+        <item name="android:windowSplashScreenIconBackgroundColor" tools:targetApi="s">#FFFFFF
+        </item>
+        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">100</item>
 
     </style>
 

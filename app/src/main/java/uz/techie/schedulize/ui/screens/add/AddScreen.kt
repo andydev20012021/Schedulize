@@ -80,6 +80,10 @@ class AddScreen : Fragment(R.layout.screen_add) {
             viewModel.getSubjectByIdIfEditing(subjectId)
             observe()
         }
+
+        colorPickAdapter = CardColorPickAdapter()
+        binding.colorRecycler.adapter = colorPickAdapter
+        
         binding.apply {
             root.doOnApplyWindowInsets { windowInsets ->
                 updatePadding(
@@ -109,9 +113,6 @@ class AddScreen : Fragment(R.layout.screen_add) {
         binding.subjectDay.setOnItemClickListener { parent, view, position, id ->
             selectedDayOfWeek = DayOfWeek.values()[position]
         }
-
-        colorPickAdapter = CardColorPickAdapter()
-        binding.colorRecycler.adapter = colorPickAdapter
     }
 
     private fun initClick() {

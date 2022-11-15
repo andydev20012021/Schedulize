@@ -5,440 +5,455 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?android:actionBarSize"
-            android:background="@color/primary"
-            app:navigationIcon="@drawable/ic_arrow_back"
-            app:title="@string/setting_fragment"
-            app:titleTextColor="@color/on_surface_100"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/primary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/setting_fragment"
+        app:titleTextColor="@color/on_surface_100" />
 
-        <ScrollView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/primary"
+        android:scrollbarSize="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/primary"
-            android:scrollbarSize="0dp"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/on_surface_400"
+            android:orientation="vertical"
+            tools:context=".ui.screens.setting.SettingFragment">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/on_surface_400"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                tools:context=".ui.screens.setting.SettingFragment">
+                android:paddingBottom="8dp">
 
-                <LinearLayout
+                <TextView
+                    style="@style/Subtitle1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingBottom="8dp">
+                    android:paddingHorizontal="@dimen/basic_margin_horizontal"
+                    android:paddingVertical="14dp"
+                    android:text="@string/general"
+                    android:textColor="@color/on_surface_200" />
 
-                    <TextView
-                        style="@style/Subtitle1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingHorizontal="@dimen/basic_margin_horizontal"
-                        android:paddingVertical="14dp"
-                        android:text="@string/general"
-                        android:textColor="@color/on_surface_200" />
+                <LinearLayout
+                    android:id="@+id/notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:id="@+id/notification"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:layout_marginVertical="20dp"
-                            android:src="@drawable/ic_notification" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Body1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/notification_title"
-                                android:textColor="@color/on_surface_100" />
-
-                            <TextView
-                                style="@style/Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="@string/notification_summary"
-                                android:textColor="@color/on_surface_200" />
-                        </LinearLayout>
-
-                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ic_notification" />
 
                     <LinearLayout
-                        android:id="@+id/language"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:layout_marginVertical="20dp"
-                            android:src="@drawable/ic_language" />
+                        <TextView
+                            style="@style/Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/notification_title"
+                            android:textColor="@color/on_surface_100" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Body1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/language_title"
-                                android:textColor="@color/on_surface_100" />
-
-                            <TextView
-                                android:id="@+id/language_summary"
-                                style="@style/Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="English"
-                                android:textColor="@color/on_surface_200" />
-                        </LinearLayout>
-
+                        <TextView
+                            style="@style/Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/notification_summary"
+                            android:textColor="@color/on_surface_200" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/theme"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:layout_marginVertical="20dp"
-                            android:src="@drawable/ic_theme" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Body1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/theme_title"
-                                android:textColor="@color/on_surface_100" />
-
-                            <TextView
-                                android:id="@+id/theme_summary"
-                                style="@style/Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="System"
-                                android:textColor="@color/on_surface_200" />
-                        </LinearLayout>
-
-                    </LinearLayout>
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:background="@color/on_surface_400" />
-
                 <LinearLayout
+                    android:id="@+id/language"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingBottom="8dp">
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        style="@style/Subtitle1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingHorizontal="@dimen/basic_margin_horizontal"
-                        android:paddingVertical="14dp"
-                        android:text="@string/data"
-                        android:textColor="@color/on_surface_200"
-                        android:textSize="@dimen/subtitle_1" />
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ic_language" />
 
                     <LinearLayout
-                        android:id="@+id/export_data"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:layout_marginVertical="20dp"
-                            android:src="@drawable/ic_export" />
+                        <TextView
+                            style="@style/Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/language_title"
+                            android:textColor="@color/on_surface_100" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Body1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/export_title"
-                                android:textColor="@color/on_surface_100" />
-
-                            <TextView
-                                style="@style/Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="@string/export_summary"
-                                android:textColor="@color/on_surface_200" />
-                        </LinearLayout>
-
+                        <TextView
+                            android:id="@+id/language_summary"
+                            style="@style/Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="English"
+                            android:textColor="@color/on_surface_200" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/import_data"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:layout_marginVertical="20dp"
-                            android:src="@drawable/ic_import" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Body1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/import_title"
-                                android:textColor="@color/on_surface_100" />
-
-                            <TextView
-                                style="@style/Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="@string/import_summary"
-                                android:textColor="@color/on_surface_200" />
-                        </LinearLayout>
-                    </LinearLayout>
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:background="@color/on_surface_400" />
-
                 <LinearLayout
+                    android:id="@+id/theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingBottom="8dp">
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        style="@style/Subtitle1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingHorizontal="@dimen/basic_margin_horizontal"
-                        android:paddingVertical="14dp"
-                        android:text="@string/about_app"
-                        android:textColor="@color/on_surface_200" />
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ic_theme" />
 
                     <LinearLayout
-                        android:id="@+id/app_version"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:layout_marginVertical="20dp"
-                            android:src="@drawable/ic_info" />
+                        <TextView
+                            style="@style/Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/theme_title"
+                            android:textColor="@color/on_surface_100" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Body1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/version_title"
-                                android:textColor="@color/on_surface_100" />
-
-                            <TextView
-                                android:id="@+id/version_entities"
-                                style="@style/Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="1.0.0"
-                                android:textColor="@color/on_surface_200" />
-                        </LinearLayout>
-
+                        <TextView
+                            android:id="@+id/theme_summary"
+                            style="@style/Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="System"
+                            android:textColor="@color/on_surface_200" />
                     </LinearLayout>
 
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/on_surface_400"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="8dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    style="@style/Subtitle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/basic_margin_horizontal"
+                    android:paddingVertical="14dp"
+                    android:text="@string/data"
+                    android:textColor="@color/on_surface_200"
+                    android:textSize="@dimen/subtitle_1" />
+
+                <LinearLayout
+                    android:id="@+id/export_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ic_export" />
+
                     <LinearLayout
-                        android:id="@+id/app_manager"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:layout_marginVertical="20dp"
-                            android:src="@drawable/ic_manager" />
+                        <TextView
+                            style="@style/Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/export_title"
+                            android:textColor="@color/on_surface_100" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Body1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/manager_title"
-                                android:textColor="@color/on_surface_100" />
-
-                            <TextView
-                                style="@style/Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="@string/manager_and_designer"
-                                android:textColor="@color/on_surface_200" />
-                        </LinearLayout>
+                        <TextView
+                            style="@style/Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/export_summary"
+                            android:textColor="@color/on_surface_200" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/app_developer"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:orientation="horizontal">
+                </LinearLayout>
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:layout_marginVertical="20dp"
-                            android:src="@drawable/ic_developer" />
+                <LinearLayout
+                    android:id="@+id/import_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Body1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/programmer_title"
-                                android:textColor="@color/on_surface_100" />
-
-                            <TextView
-                                style="@style/Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="@string/developer"
-                                android:textColor="@color/on_surface_200" />
-                        </LinearLayout>
-                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ic_import" />
 
                     <LinearLayout
-                        android:id="@+id/telegram_link"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:layout_marginVertical="20dp"
-                            android:src="@drawable/ic_telegram" />
+                        <TextView
+                            style="@style/Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/import_title"
+                            android:textColor="@color/on_surface_100" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Body1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/telegram_title"
-                                android:textColor="@color/on_surface_100" />
-
-                            <TextView
-                                style="@style/Body2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:text="@string/telegram_summary"
-                                android:textColor="@color/on_surface_200" />
-                        </LinearLayout>
-
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:layout_marginVertical="20dp"
-                            android:src="@drawable/ic_link" />
-
+                        <TextView
+                            style="@style/Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/import_summary"
+                            android:textColor="@color/on_surface_200" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </ScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/on_surface_400" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    style="@style/Subtitle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/basic_margin_horizontal"
+                    android:paddingVertical="14dp"
+                    android:text="@string/about_app"
+                    android:textColor="@color/on_surface_200" />
+
+                <LinearLayout
+                    android:id="@+id/app_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ic_info" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/version_title"
+                            android:textColor="@color/on_surface_100" />
+
+                        <TextView
+                            android:id="@+id/version_entities"
+                            style="@style/Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="1.0.0"
+                            android:textColor="@color/on_surface_200" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/app_manager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ic_manager" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/manager_title"
+                            android:textColor="@color/on_surface_100" />
+
+                        <TextView
+                            style="@style/Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/manager_and_designer"
+                            android:textColor="@color/on_surface_200" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/app_developer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ic_developer" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/programmer_title"
+                            android:textColor="@color/on_surface_100" />
+
+                        <TextView
+                            style="@style/Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/developer"
+                            android:textColor="@color/on_surface_200" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/telegram_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="20dp"
+                        android:src="@drawable/ic_telegram" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/telegram_title"
+                            android:textColor="@color/on_surface_100" />
+
+                        <TextView
+                            style="@style/Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/telegram_summary"
+                            android:textColor="@color/on_surface_200" />
+                    </LinearLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/telegram_link_copy"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="16dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardCornerRadius="1000dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_link" />
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <FrameLayout
         android:id="@+id/show_progress"
