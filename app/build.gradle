@@ -16,7 +16,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 31
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -26,6 +26,14 @@ android {
                         "room.schemaLocation"  : "$projectDir/schemas".toString(),
                         "room.incremental"     : "true",
                         "room.expandProjection": "true"]
+            }
+        }
+
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def file = output.outputFile
+                output.outputFileName = new File(file.parent, file.name.replace("app", "Schedulize")).name
+                output.outputFileName = new File(file.parent, output.outputFileName.replace(".apk", "-" + defaultConfig.versionName + ".apk")).name
             }
         }
     }
